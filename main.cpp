@@ -7,9 +7,9 @@ double floorWithPrec(double value, int prec) {
     return floor(abs(value) * pow(10.0, prec)) / pow(10.0, prec) * (value < 0 ? -1.0 : 1.0);
 }
 
-double countIntDigits(double value, int prec) {
+int countIntDigits(double value, int prec) {
     double t = round(abs(value) * pow(10.0, prec)) / pow(10.0, prec);
-    return t >= 1.0 ? int(log10(t)) + 1 : 0;
+    return t >= 1.0 ? log10(t) + 1 : 0;
 }
 
 QString toString(const QString& format, double value, bool truncate = false) {
